@@ -21,6 +21,7 @@ public class UserFactory {
     public static User negativeUserWrongPassword(){
         User user = new User
                 (faker.internet().emailAddress(),"dante");
+        return user;
 
     }
 }
