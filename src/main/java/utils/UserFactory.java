@@ -11,4 +11,16 @@ public class UserFactory {
                 "D@NT3A");
         return user;
     }
+
+    public static User negativeUserWrongEmail(){
+        User user = new User
+                (faker.internet().domainName(),"D@NT3A");
+        return user;
+    }
+
+    public static User negativeUserWrongPassword(){
+        User user = new User
+                (faker.internet().emailAddress(),"dante");
+
+    }
 }
