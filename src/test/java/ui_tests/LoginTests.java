@@ -8,6 +8,9 @@ import pages.ContactPage;
 import pages.HomePage;
 import pages.LoginPage;
 
+import static utils.UserFactory.negativeUserWrongEmail;
+import static utils.UserFactory.negativeUserWrongPassword;
+
 public class LoginTests extends AppManager {
     @Test
     public void loginPositiveTest() {
@@ -42,8 +45,8 @@ public class LoginTests extends AppManager {
         LoginPage loginPage = new LoginPage(getDriver());
         loginPage.typeLoginRegistrationFormWithUser(user);
         loginPage.clickBtnLoginForm();
-        Assert.assertEquals
-                (loginPage.closeAlertReturnText(), "Wrong email or password");
+        Assert.assertFalse
+                (new ContactPage(getDriver()).isSignOutButtonPresent("Sign Out"));
     }
 
     @Test
@@ -54,6 +57,70 @@ public class LoginTests extends AppManager {
         LoginPage loginPage = new LoginPage(getDriver());
         loginPage.typeLoginRegistrationFormWithUser(user);
         loginPage.clickBtnLoginForm();
+        Assert.assertEquals
+                (loginPage.closeAlertReturnText(), "Wrong email or password");
+    }
+
+    public void loginNegativeTest_EmptyEmail() {
+        User user = new User("", "314@PieHole!");
+        HomePage homePage = new HomePage(getDriver());
+        homePage.clickBtnLogin();
+        LoginPage loginPage = new LoginPage(getDriver());
+        loginPage.typeLoginRegistrationFormWithUser(user);
+        loginPage.clickBtnLoginForm();
+        Assert.assertEquals
+                (loginPage.closeAlertReturnText(), "Wrong email or password");
+    }
+
+    public void loginNegativeTest_EmptyPassword() {
+        User user = new User("dante@hell.it", "");
+        HomePage homePage = new HomePage(getDriver());
+        homePage.clickBtnLogin();
+        LoginPage loginPage = new LoginPage(getDriver());
+        loginPage.typeLoginRegistrationFormWithUser(user);
+        loginPage.clickBtnLoginForm();
+        Assert.assertEquals
+                (loginPage.closeAlertReturnText(), "Wrong email or password");
+    }
+
+    public void loginNegativeTest_EmailWoDomain() {
+        User user = new User("dantehell", "314@PieHole!");
+        HomePage homePage = new HomePage(getDriver());
+        homePage.clickBtnLogin();
+        LoginPage loginPage = new LoginPage(getDriver());
+        loginPage.typeLoginRegistrationFormWithUser(user);
+        loginPage.clickBtnLoginForm();
+        Assert.assertEquals
+                (loginPage.closeAlertReturnText(), "Wrong email or password");
+    }
+
+    public void loginNegativeTest_PasswordOnlyNumbers() {
+        User user = new User("dante@hell.it", "314456789");
+        HomePage homePage = new HomePage(getDriver());
+        homePage.clickBtnLogin();
+        LoginPage loginPage = new LoginPage(getDriver());
+        loginPage.typeLoginRegistrationFormWithUser(user);
+        loginPage.clickBtnLoginForm();
+        Assert.assertEquals
+                (loginPage.closeAlertReturnText(), "Wrong email or password");
+    }
+
+    @Test
+    public void loginNegativeTest_WithFakerEmail(){
+        User user = negativeUserWrongEmail();
+        System.out.println(user);
+        loginPage.typeLoginRegistrationFormWithUser(user);
+        loginPage.clickBtnRegistrationForm();
+        Assert.assertEquals
+                (loginPage.closeAlertReturnText(), "Wrong email or password");
+    }
+
+    @Test
+    public void loginNegativeTest_WithFakerPassword(){
+        User user = negativeUserWrongPassword();
+        System.out.println(user);
+        loginPage.typeLoginRegistrationFormWithUser(user);
+        loginPage.clickBtnRegistrationForm();
         Assert.assertEquals
                 (loginPage.closeAlertReturnText(), "Wrong email or password");
     }
