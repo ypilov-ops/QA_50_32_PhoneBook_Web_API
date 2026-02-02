@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import static utils.HeaderMenuItem.SIGN_OUT;
+
 public class BasePage {
     static WebDriver driver;
 
@@ -24,4 +26,32 @@ public class BasePage {
         return element.getText().contains(text);
 
     }
+    public static <T extends BasePage> T clickButtonHeader(HeaderMenuItem item) {
+        WebElement element = new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.elementToBeClickable(By.xpath(item.getLocator())));
+        element.click();
+        switch (item) {
+            case HOME -> {
+                return  (T) new HomePage(driver);
+            }
+            case ABOUT -> {
+                return  (T) new AboutPage(driver);
+            }
+            case CONTACTS -> {
+                return (T) new ContactPage(driver);
+            }
+            case ADD -> {
+                return (T) new AddPage(driver);
+            }
+            case LOGIN -> {
+                return  (T) new LoginPage(driver);
+            }
+            case SIGN_OUT -> {
+                return  (T) new HomePage(driver);
+            }
+            default -> throw new IllegalArgumentException("Invalid headerMenuItem");
+        }
+
+    }
+
 }

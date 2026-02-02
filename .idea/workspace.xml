@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b76733e4-e17b-4fb5-82c3-3aee239ba9cb" name="Changes" comment="Login Negative">
-      <change beforePath="$PROJECT_DIR$/src/test/java/ui_tests/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui_tests/LoginTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dto/Contact.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/AddPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/ContactFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/HeaderMenuItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ui_tests/AddNewContactTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +47,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -149,7 +157,8 @@
       <workItem from="1769151953268" duration="6013000" />
       <workItem from="1769420528171" duration="4585000" />
       <workItem from="1769522676223" duration="692000" />
-      <workItem from="1769599750684" duration="2677000" />
+      <workItem from="1769599750684" duration="2709000" />
+      <workItem from="1770023862484" duration="3168000" />
     </task>
     <task id="LOCAL-00001" summary="Login Positive">
       <option name="closed" value="true" />
@@ -207,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769602247363</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Login Negative">
+      <option name="closed" value="true" />
+      <created>1769602656134</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1769602656134</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
