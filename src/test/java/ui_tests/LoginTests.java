@@ -8,6 +8,7 @@ import pages.ContactPage;
 import pages.HomePage;
 import pages.LoginPage;
 import utils.RetryAnalyser;
+import static utils.PropertiesReader.*;
 
 import static utils.UserFactory.negativeUserWrongEmail;
 import static utils.UserFactory.negativeUserWrongPassword;
@@ -19,8 +20,10 @@ public class LoginTests extends AppManager {
         HomePage homePage = new HomePage(getDriver());
         homePage.clickBtnLogin();
         LoginPage loginPage = new LoginPage(getDriver());
-        loginPage.typeLoginRegistrationForm
-                ("dante@hell.it", "314@PieHole");
+//        loginPage.typeLoginRegistrationForm
+//                ("dante@hell.it", "314@PieHole");
+        loginPage.typeLoginRegistrationForm(getProperty("base.properties", "login"),
+                getProperty("base.properties", "password"));
         loginPage.clickBtnLoginForm();
         Assert.assertTrue
                 (new ContactPage(getDriver()).isAddButtonPresent("ADD"));
@@ -28,7 +31,8 @@ public class LoginTests extends AppManager {
 
     @Test
     public void loginPositiveTestWithUser() {
-        User user = new User("dante@hell.it", "314@PieHole");
+        User user = new User(getProperty("base.properties", "login"),
+                getProperty("base.properties", "password"));
         HomePage homePage = new HomePage(getDriver());
         homePage.clickBtnLogin();
         LoginPage loginPage = new LoginPage(getDriver());
@@ -40,7 +44,7 @@ public class LoginTests extends AppManager {
 
     @Test
     public void loginNegativeTest_WrongEmail() {
-        User user = new User("dantehell.it", "314@PieHole!");
+        User user = new User("dantehell.it", "314@PieHole");
         HomePage homePage = new HomePage(getDriver());
         homePage.clickBtnLogin();
         LoginPage loginPage = new LoginPage(getDriver());
@@ -63,7 +67,7 @@ public class LoginTests extends AppManager {
     }
     @Test
     public void loginNegativeTest_EmptyEmail() {
-        User user = new User("", "314@PieHole!");
+        User user = new User("", "314@PieHole");
         HomePage homePage = new HomePage(getDriver());
         homePage.clickBtnLogin();
         LoginPage loginPage = new LoginPage(getDriver());
@@ -88,7 +92,7 @@ public class LoginTests extends AppManager {
 
     @Test
     public void loginNegativeTest_EmailWoDomain() {
-        User user = new User("dantehell", "314@PieHole!");
+        User user = new User("dantehell", "314@PieHole");
         HomePage homePage = new HomePage(getDriver());
         homePage.clickBtnLogin();
         LoginPage loginPage = new LoginPage(getDriver());

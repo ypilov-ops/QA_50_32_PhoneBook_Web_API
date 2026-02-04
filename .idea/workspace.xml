@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b76733e4-e17b-4fb5-82c3-3aee239ba9cb" name="Changes" comment="Add New Contact&#10;Test With List">
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/PropertiesReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/ContactPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ContactPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ui_tests/AddNewContactTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui_tests/AddNewContactTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ui_tests/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui_tests/LoginTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +76,7 @@
   "keyToString": {
     "Gradle.AddNewContactTests.addNewContactPositiveTest.executor": "Run",
     "Gradle.AddNewContactTests.addNewContactPositiveTest_ClickLastContact.executor": "Run",
+    "Gradle.AddNewContactTests.addNewContactPositiveTest_ScrollToLastContact.executor": "Run",
     "Gradle.LoginTests.executor": "Run",
     "Gradle.LoginTests.loginPositiveTest.executor": "Run",
     "Gradle.RegistrationTests.registrationNegativeTest_WrongPassword.executor": "Run",
@@ -83,6 +87,9 @@
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/AutoProjects/QA_50_32_PhoneBook_Web_API",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
     "vue.rearranger.settings.migration": "true"
   }
@@ -92,7 +99,7 @@
       <recent name="C:\AutoProjects\QA_50_32_PhoneBook_Web_API\src\test\properties" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.LoginTests.loginPositiveTest">
+  <component name="RunManager" selected="Gradle.AddNewContactTests.addNewContactPositiveTest_ScrollToLastContact">
     <configuration name="AddNewContactTests.addNewContactPositiveTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -147,7 +154,7 @@
       <GradleCoverageDisabled>false</GradleCoverageDisabled>
       <method v="2" />
     </configuration>
-    <configuration name="LoginTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="AddNewContactTests.addNewContactPositiveTest_ScrollToLastContact" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -160,7 +167,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ui_tests.LoginTests&quot;" />
+            <option value="&quot;ui_tests.AddNewContactTests.addNewContactPositiveTest_ScrollToLastContact&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -239,11 +246,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.AddNewContactTests.addNewContactPositiveTest_ScrollToLastContact" />
         <item itemvalue="Gradle.LoginTests.loginPositiveTest" />
         <item itemvalue="Gradle.AddNewContactTests.addNewContactPositiveTest_ClickLastContact" />
         <item itemvalue="Gradle.AddNewContactTests.addNewContactPositiveTest" />
         <item itemvalue="Gradle.RegistrationTests.registrationNegativeTest_WrongPassword" />
-        <item itemvalue="Gradle.LoginTests" />
       </list>
     </recent_temporary>
   </component>
@@ -276,7 +283,7 @@
       <workItem from="1770023862484" duration="3198000" />
       <workItem from="1770034293612" duration="895000" />
       <workItem from="1770134702965" duration="2821000" />
-      <workItem from="1770190956671" duration="9198000" />
+      <workItem from="1770190956671" duration="15736000" />
     </task>
     <task id="LOCAL-00001" summary="Login Positive">
       <option name="closed" value="true" />
@@ -366,7 +373,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770205857611</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Add New Contact&#10;Test With List">
+      <option name="closed" value="true" />
+      <created>1770207438447</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1770207438447</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -384,7 +399,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/ui_tests/LoginTests.java</url>
-          <line>22</line>
+          <line>23</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
