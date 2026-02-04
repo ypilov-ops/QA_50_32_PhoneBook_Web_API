@@ -1,12 +1,11 @@
 package ui_tests;
 
+import dto.Contact;
 import manager.AppManager;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pages.AddPage;
-import pages.ContactPage;
-import pages.HomePage;
-import pages.LoginPage;
+import pages.*;
 import utils.HeaderMenuItem;
 
 import static pages.BasePage.clickButtonHeader;
@@ -17,23 +16,33 @@ public class AddNewContactTests extends AppManager {
     LoginPage loginPage;
     ContactPage contactPage;
     AddPage addPage;
+    int countContacts;
 
     @BeforeMethod
     public void login() {
         homePage = new HomePage(getDriver());
         loginPage = clickButtonHeader(HeaderMenuItem.LOGIN);
         loginPage.typeLoginRegistrationForm
-                ("sveta548@smd.com", "Password123!");
+                ("dante@hell.it", "314@PieHole");
         loginPage.clickBtnLoginForm();
         contactPage = new ContactPage(getDriver());
+        countContacts = contactPage.getCountOfContacts();
         addPage = clickButtonHeader(HeaderMenuItem.ADD);
     }
-
 
     @Test
     public void addNewContactPositiveTest() {
         addPage.typeContactForm(positiveContact());
+        int countOfContactsAfterAdd = contactPage.getCountOfContacts();
+        Assert.assertEquals(countOfContactsAfterAdd, countContacts + 1);
     }
 
+    @Test
+    public void addNewContactPositiveTest_ClickLastContact() {
+        Contact contact = positiveContact();
+        addPage.typeContactForm(contact);
+//        contactPage.clickLastContact();
+        Assert.assertTrue(contactPage.isContactPresent(contact));
 
+    }
 }

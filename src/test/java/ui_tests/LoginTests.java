@@ -7,12 +7,13 @@ import org.testng.annotations.Test;
 import pages.ContactPage;
 import pages.HomePage;
 import pages.LoginPage;
+import utils.RetryAnalyser;
 
 import static utils.UserFactory.negativeUserWrongEmail;
 import static utils.UserFactory.negativeUserWrongPassword;
 
 public class LoginTests extends AppManager {
-    @Test
+    @Test(retryAnalyzer = RetryAnalyser.class)
     public void loginPositiveTest() {
         System.out.println("1st test");
         HomePage homePage = new HomePage(getDriver());
@@ -60,7 +61,7 @@ public class LoginTests extends AppManager {
         Assert.assertEquals
                 (loginPage.closeAlertReturnText(), "Wrong email or password");
     }
-
+    @Test
     public void loginNegativeTest_EmptyEmail() {
         User user = new User("", "314@PieHole!");
         HomePage homePage = new HomePage(getDriver());
@@ -72,6 +73,7 @@ public class LoginTests extends AppManager {
                 (loginPage.closeAlertReturnText(), "Wrong email or password");
     }
 
+    @Test
     public void loginNegativeTest_EmptyPassword() {
         User user = new User("dante@hell.it", "");
         HomePage homePage = new HomePage(getDriver());
@@ -83,6 +85,8 @@ public class LoginTests extends AppManager {
                 (loginPage.closeAlertReturnText(), "Wrong email or password");
     }
 
+
+    @Test
     public void loginNegativeTest_EmailWoDomain() {
         User user = new User("dantehell", "314@PieHole!");
         HomePage homePage = new HomePage(getDriver());
@@ -94,6 +98,7 @@ public class LoginTests extends AppManager {
                 (loginPage.closeAlertReturnText(), "Wrong email or password");
     }
 
+    @Test
     public void loginNegativeTest_PasswordOnlyNumbers() {
         User user = new User("dante@hell.it", "314456789");
         HomePage homePage = new HomePage(getDriver());
@@ -109,6 +114,7 @@ public class LoginTests extends AppManager {
     public void loginNegativeTest_WithFakerEmail(){
         User user = negativeUserWrongEmail();
         System.out.println(user);
+        LoginPage loginPage = new LoginPage(getDriver());
         loginPage.typeLoginRegistrationFormWithUser(user);
         loginPage.clickBtnRegistrationForm();
         Assert.assertEquals
@@ -119,6 +125,7 @@ public class LoginTests extends AppManager {
     public void loginNegativeTest_WithFakerPassword(){
         User user = negativeUserWrongPassword();
         System.out.println(user);
+        LoginPage loginPage = new LoginPage(getDriver());
         loginPage.typeLoginRegistrationFormWithUser(user);
         loginPage.clickBtnRegistrationForm();
         Assert.assertEquals

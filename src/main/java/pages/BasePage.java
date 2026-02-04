@@ -3,29 +3,31 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.HeaderMenuItem;
 
-import static utils.HeaderMenuItem.SIGN_OUT;
+import java.time.Duration;
 
-public class BasePage {
+public abstract class BasePage {
     static WebDriver driver;
 
-    public static void setDriver(WebDriver wd){
+    public static void setDriver(WebDriver wd) {
         driver = wd;
     }
 
-    public void pause (int time){
+    public void pause(int time) {
         try {
-            Thread.sleep(time*1000L);
-        } catch (InterruptedException e){
+            Thread.sleep(time * 1000L);
+        } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public boolean isTextInElementPresent(WebElement element, String text){
+    public boolean isTextInElementPresent(WebElement element, String text) {
         return element.getText().contains(text);
-
     }
+
     public static <T extends BasePage> T clickButtonHeader(HeaderMenuItem item) {
         WebElement element = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(item.getLocator())));
@@ -53,5 +55,4 @@ public class BasePage {
         }
 
     }
-
 }

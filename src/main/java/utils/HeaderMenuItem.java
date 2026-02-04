@@ -17,5 +17,5 @@ public enum HeaderMenuItem {
     public String getLocator() {
         return locator;
     }
-
 }
+

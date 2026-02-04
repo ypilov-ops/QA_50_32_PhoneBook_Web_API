@@ -12,34 +12,26 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class LoginPage extends BasePage{
-    public LoginPage(WebDriver driver){
+public class LoginPage extends BasePage {
+    public LoginPage(WebDriver driver) {
         setDriver(driver);
-        PageFactory.initElements
-                (new AjaxElementLocatorFactory(driver, 10), this);
-
+        PageFactory.initElements(new AjaxElementLocatorFactory
+                (driver, 10), this);
     }
 
     @FindBy(xpath = "//input[@name='email']")
     WebElement inputEmail;
-    @FindBy(xpath = "//input[@placeholder = 'Password']")
+    @FindBy(xpath = "//input[@placeholder='Password']")
     WebElement inputPassword;
     @FindBy(xpath = "//button[text()='Login']")
     WebElement btnLoginForm;
     @FindBy(css = "button[name='registration']")
     WebElement btnRegistrationForm;
 
-    public void typeLoginRegistrationForm(String email, String password){
+    public void typeLoginRegistrationForm(String email,
+                                          String password) {
         inputEmail.sendKeys(email);
         inputPassword.sendKeys(password);
-
-    }
-
-    public void clickBtnRegistrationForm(){
-        btnRegistrationForm.click();
-    }
-    public void clickBtnLoginForm(){
-        btnLoginForm.click();
     }
 
     public void typeLoginRegistrationFormWithUser(User user){
@@ -47,12 +39,13 @@ public class LoginPage extends BasePage{
         inputPassword.sendKeys(user.getPassword());
     }
 
-    public void  clickBtnLoginFormWithUser(){
+    public void clickBtnLoginForm() {
         btnLoginForm.click();
     }
 
-    public void setBtnRegistrationForm(WebElement btnRegistrationForm) {
+    public void clickBtnRegistrationForm() {
         btnRegistrationForm.click();
+        pause(3);
     }
 
     public String closeAlertReturnText(){
