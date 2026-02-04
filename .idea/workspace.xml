@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b76733e4-e17b-4fb5-82c3-3aee239ba9cb" name="Changes" comment="Add New Contact">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/AboutPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/RetryAnalyser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/base.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="b76733e4-e17b-4fb5-82c3-3aee239ba9cb" name="Changes" comment="Add New Contact&#10;Test With List">
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/PropertiesReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/ContactPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ContactPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/HeaderMenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/HeaderMenuItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ui_tests/AddNewContactTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui_tests/AddNewContactTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ui_tests/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ui_tests/LoginTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +87,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\AutoProjects\QA_50_32_PhoneBook_Web_API\src\test\properties" />
+    </key>
+  </component>
   <component name="RunManager" selected="Gradle.LoginTests.loginPositiveTest">
     <configuration name="AddNewContactTests.addNewContactPositiveTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -280,7 +276,7 @@
       <workItem from="1770023862484" duration="3198000" />
       <workItem from="1770034293612" duration="895000" />
       <workItem from="1770134702965" duration="2821000" />
-      <workItem from="1770190956671" duration="7339000" />
+      <workItem from="1770190956671" duration="9198000" />
     </task>
     <task id="LOCAL-00001" summary="Login Positive">
       <option name="closed" value="true" />
@@ -354,7 +350,23 @@
       <option name="project" value="LOCAL" />
       <updated>1770034276291</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add New Contact&#10;Test With List">
+      <option name="closed" value="true" />
+      <created>1770205601558</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1770205601558</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Add New Contact&#10;Test With List">
+      <option name="closed" value="true" />
+      <created>1770205857611</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1770205857611</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -364,7 +376,8 @@
     <MESSAGE value="Login Positive" />
     <MESSAGE value="Login Negative" />
     <MESSAGE value="Add New Contact" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add New Contact" />
+    <MESSAGE value="Add New Contact&#10;Test With List" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add New Contact&#10;Test With List" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
